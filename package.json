@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe",
+  "description": "Jarvis' CISC 131",
+  "version": "1.0.0",
+  "scripts": {
+    "setup": "npm list -g serve || npm i -g serve",
+    "start": "npm run setup && serve ./src",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshgreenwell/tictactoe.git"
+  },
+  "keywords": [],
+  "author": "Josh Greenwell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshgreenwell/tictactoe/issues"
+  },
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}

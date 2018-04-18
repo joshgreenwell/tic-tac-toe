@@ -1,0 +1,31 @@
+/* Base */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  font-size: 12pt;
+  width: 33em;
+  padding-top: 5em;
+  margin: auto;
+}
+
+/* Board css */
+.square {
+  font-size: 8em;
+  text-align: center;
+  float: left;
+  width: 1.2em;
+  height: 1.2em;
+}
+
+.down {
+  border-bottom: 1px black solid;
+}
+
+.mid {
+  border-left:1px black solid;
+  border-right:1px black solid;
+}
