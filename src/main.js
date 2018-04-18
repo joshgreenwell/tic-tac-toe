@@ -62,16 +62,22 @@ const checkWinner = () => {
   const x = localState.indexOf('XXX')
   const o = localState.indexOf('OOO')
 
-  if (x > -1) { changeColor(x) }
-  else if (o > -1) { changeColor(o) }
+  if (x > -1) { endGame(x) }
+  else if (o > -1) { endGame(o) }
+}
+
+const endGame = index => {
+  changeColor(index)
+  const arr = document.querySelectorAll('*[id^="box"]')
+  arr.forEach(item => item.onclick = null)
 }
 
 const changeColor = index => {
-  // const combo = winningCombinations.substring(index, index+3)
-  // const regex = new RegExp(`([id$="x${combo[0]}"])|([id$="x${combo[1]}"])|([id$="x${combo[2]}"])`, 'g')
-  // console.log(regex)
-  // const arr = document.querySelectorAll(regex)
-  // arr.forEach(item => item.style.color = 'red')
+  const combo = winningCombinations.substring(index, index+3)
+  for (let i = 0; i < 3; i++) { 
+    document.querySelector(`#box${combo[i]}`).style.color = 'red'
+    console.log(document.querySelector(`#box${combo[i]}`))
+  }
 }
 
 // --- Accessors/Mutators for Globals --- //
@@ -111,6 +117,7 @@ module.exports = {
   clicked,
   updateBoardState,
   checkWinner,
+  endGame,
   changeColor,
 
   getMarkCount,
